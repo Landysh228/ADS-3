@@ -36,17 +36,17 @@ unsigned int seqCollatz(unsigned int *maxlen,
                         uint64_t lbound,
                         uint64_t rbound) {
   unsigned int BNum = lbound;
-  unsigned int mxLength = 0;
+  unsigned int maxLength = 0;
   for (uint64_t i = lbound; i <= rbound; i++) {
     unsigned int currentLen = collatzLen(i);
-    if (currentLen > mxLength) {
-      mxLength = currentLen;
+    if (currentLen > maxLength) {
+      maxLength = currentLen;
       BNum = i;
     }
   }
 
   if (maxlen != nullptr) {
-    *maxlen = mxLength;
+    *maxlen = maxLength;
   }
 
   return BNum;
